@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .container{
+            width: 700px;
+            height: 700px;
+            
+            margin: 100px auto;
+            position: relative;
+            background: rgb(255, 255, 255)
+        } */
+        .face{
+            width:500px;
+            height: 500px;
+            background-color: black;
+            border-radius: 50%;
+            position: relative;
+            top: 10px;
+            left: 90px;
+            /* display: inline-block; */
+            /* text-align: center; */
+        }
+        .eye{
+            width: 150px ;
+            height: 200px;
+            background-color: rgb(242, 1, 255);
+            border-radius: 90%;
+            position: absolute;
+            overflow: hidden;
+        }
+        #left-brow{
+            height: 140px;
+            width: 150px;
+            border: 20px solid transparent;
+            border-top: 20px solid rgb(255, 255, 255);
+            border-radius: 50%;
+            position: absolute;
+            top: 70px;
+            left: 70px;
+            rotate: -3deg;
+           
+        }
+        .left-b{
+            animation: left-b 1s infinite alternate;
+        }
+
+        @keyframes left-b{
+            0%{
+            top: 80px;
+            }
+
+            50%{
+                left: 80px;
+            }
+        }
+
+        #right-brow{ 
+            height: 140px;
+            width: 150px;
+            border: 20px solid transparent;
+            border-top: 20px solid rgb(255, 255, 255);
+            border-radius: 50%;
+            position: absolute;
+            top: 70px;
+            right: 70px;
+            rotate: 3deg;
+           
+        }
+
+        .right-b{
+            animation: right-b 1s infinite alternate;
+        }
+
+        @keyframes right-b{
+            0%{
+            top: 80px;
+            }
+
+            50%{
+                right: 80px;
+            }
+        }
+
+        
+        .left-eye{
+            left: 90px;
+            top: 25%;
+
+        }
+
+
+        .left-eye::before{
+            content: ".";
+            position: absolute;
+            font-size: 40px;
+            color: white;
+            top: 100px;
+            left: 90px;
+            height: 50px;
+            width: 50px;
+            background: hsl(147, 100%, 50%);
+            border-radius: 50%;
+            border: 5px solid black;
+            animation: left-eye 1s infinite linear alternate;
+            
+        }
+        @keyframes left-eye{
+            0%{
+                left: 50px;
+            }
+            10%{
+                left: 50px;
+            }
+
+           
+        }
+
+        @keyframes right-eye{
+            0%{
+                left: 50px;
+            }
+            10%{
+                left: 50px;
+            }
+        }
+
+        .right-eye::before{
+            content: ".";
+            position: absolute;
+            font-size: 40px;
+            color: white;
+            top: 100px;
+            left: 90px;
+            height: 50px;
+            width: 50px;
+            background: hsl(147, 100%, 50%);
+            border-radius: 50%;
+            border: 5px solid black;
+            animation: right-eye 1s infinite linear alternate;
+        }
+
+
+        .right-eye{
+            right: 90px;
+            top: 25%;
+        }
+        .mouth{
+            width: 40% ;
+            height: 1px;
+            background-color: rgb(249, 176, 176);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 90px;
+            left: 29%;
+            border-top: 10px solid rgb(255, 145, 145);
+            border: 10px solid transparent;
+            rotate: 1deg;
+
+        }
+
+        #left{
+           
+           position: absolute;
+           border-radius: 50%;
+           height: 350px;
+           width: 410px;
+           top: -50px;
+           left: -29px;
+           background: rgb(0, 238, 255);
+           animation: left 2s  linear ; 
+           /* transition: 5s; */
+       }
+
+       #right{
+            /* content: ""; */
+            position: absolute;
+            border-radius: 50%;
+            height: 350px;
+            width: 410px;
+            top: -50px;
+            right: -29px;
+            background: rgb(0, 238, 255);
+            /* animation: right 2s  linear ; */
+        }
+
+        button{
+            height: 50px;
+            width: 150px;
+            font-size: 40px;
+            display: block;
+            margin: auto;
+            margin-bottom: -100px;
+        }
+         
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="face">
+        <div id="left-brow"></div>
+        <div class="eye left-eye"><div id="left"></div>
+       </div>
+        
+        <div id="right-brow"></div>
+        <div class="eye right-eye"><div id="right"></div>
+    </div>
+        <div class="mouth"></div>
+    </div>
+        
+    </div>
+    <button onclick="eyeButton()" >Click</button>
+
+
+    <script>
+       left_Eye = document.getElementById('left');
+       right_Eye = document.getElementById('right');
+       left = document.getElementById('left-brow');
+       right = document.getElementById('right-brow');
+
+       console.log(left_Eye);
+
+       function eyeButton()  {
+
+        left_Eye.style.top = "-350px"
+        left_Eye.style.transition="3s"
+         right_Eye.style.top="-350px"
+         right_Eye.style.transition="3s"
+
+         left.className = "left-b"
+         right.className = "right-b"
+
+       }
+
+    </script>
+</body>
+</html>
